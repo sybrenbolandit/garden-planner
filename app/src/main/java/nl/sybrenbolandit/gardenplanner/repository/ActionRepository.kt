@@ -24,11 +24,5 @@ class ActionRepository {
         actionList = MutableLiveData<List<Action>>()
         actionList.value = actions
     }
-
-    fun getAction(code: UUID): LiveData<Action> {
-        val action = MutableLiveData<Action>()
-        action.value = actions.filter { it.code == code }.first()
-        return action
-    }
 }
 

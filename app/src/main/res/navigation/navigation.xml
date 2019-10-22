@@ -9,20 +9,5 @@
         android:id="@+id/homeFragment"
         android:name="nl.sybrenbolandit.gardenplanner.fragment.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_actionDetailFragment"
-            app:destination="@id/actionDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/actionDetailFragment"
-        android:name="nl.sybrenbolandit.gardenplanner.fragment.detail.ActionDetailFragment"
-        android:label="ActionDetailFragment" >
-        <action
-            android:id="@+id/action_actionDetailFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <argument
-            android:name="actionCode"
-            app:argType="string" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 </navigation>
