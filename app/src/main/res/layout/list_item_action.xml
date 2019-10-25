@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="action"
+            type="nl.sybrenbolandit.gardenplanner.domain.Action" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/actionTitle"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/actionTypeImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/actionTypeImage"
+            app:actionTitle="@{action}"
+            tools:text="Start planting potatoes" />
+
+        <TextView
+            android:id="@+id/actionDescription"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/actionTitle"
+            app:layout_constraintStart_toStartOf="@+id/actionTitle"
+            app:layout_constraintTop_toBottomOf="@+id/actionTitle"
+            app:actionDescription="@{action}"
+            tools:text="Pick up your potatoes and get set to multiply them!" />
+
+        <ImageView
+            android:id="@+id/actionTypeImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/icon_action_type_description"
+            app:actionTypeImage="@{action}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
