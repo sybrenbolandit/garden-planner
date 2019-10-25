@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">GardenPlanner</string>
-
-    <string name="leave_detials_button">Back</string>
-
-    <string name="icon_action_type_description">Action type icon</string>
-</resources>
