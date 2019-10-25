@@ -15,4 +15,7 @@ interface ActionDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertAll(actionList: List<DatabaseAction>)
 
+    @Query("SELECT * FROM actions WHERE code = :code")
+    fun findActionByCode(code: String): DatabaseAction
+
 }

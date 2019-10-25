@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import nl.sybrenbolandit.gardenplanner.R
 import nl.sybrenbolandit.gardenplanner.databinding.FragmentHomeBinding
 
@@ -25,7 +26,9 @@ class HomeFragment : Fragment() {
 
         binding.homeViewModel = homeViewModel
 
-        val adapter = ActionAdapter()
+        val adapter = ActionAdapter(ActionListener { code ->
+            homeViewModel.onActionClicked(code)
+        })
         binding.actionList.adapter = adapter
         homeViewModel.actionList.observe(viewLifecycleOwner, Observer {
             it?.let {
@@ -33,6 +36,14 @@ class HomeFragment : Fragment() {
             }
         })
 
+        homeViewModel.navigateToDetails.observe(this, Observer { code ->
+            code?.let {
+
+                this.findNavController().navigate(
+                        HomeFragmentDirections.actionHomeFragmentToDetailFragment(code))
+                homeViewModel.onNavigated()
+            }
+        })
 
         return binding.root
     }

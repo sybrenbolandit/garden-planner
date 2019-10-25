@@ -23,14 +23,16 @@ data class DatabaseAction(
 )
 
 fun List<DatabaseAction>.asDomainModel(): List<Action> {
-    return map {
-        Action(
-                title = it.title,
-                code = UUID.fromString(it.code),
-                description = it.description,
-                type = ActionType.valueOf(it.type)
-        )
-    }
+    return map { it.asDomainModel() }
+}
+
+fun DatabaseAction.asDomainModel(): Action {
+    return Action(
+            title = title,
+            code = UUID.fromString(code),
+            description = description,
+            type = ActionType.valueOf(type)
+    )
 }
 
 fun List<Action>.asDatabaseEntities(): List<DatabaseAction> {
