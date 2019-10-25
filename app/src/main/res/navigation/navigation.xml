@@ -23,6 +23,9 @@
             android:id="@+id/action_detailFragment_to_doneFragment"
             app:destination="@id/doneFragment"
             app:popUpTo="@+id/homeFragment" />
+        <argument
+            android:name="code"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/doneFragment"
