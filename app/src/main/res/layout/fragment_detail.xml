@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragment.done.DoneFragment">
+    tools:context=".fragment.detail.DetailFragment">
 
     <data>
         <variable
@@ -11,7 +11,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/doneConstraintLayout"
+        android:id="@+id/detailConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
