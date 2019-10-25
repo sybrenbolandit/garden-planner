@@ -1,12 +1,14 @@
 package nl.sybrenbolandit.gardenplanner.repository.database
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import nl.sybrenbolandit.gardenplanner.domain.Action
 import nl.sybrenbolandit.gardenplanner.domain.ActionType
 import java.util.*
 
-@Entity(tableName = "actions")
+@Entity(tableName = "actions",
+        indices = [Index(value = ["code"], unique = true)])
 data class DatabaseAction(
         @PrimaryKey(autoGenerate = true)
         var id: Long = 0L,
