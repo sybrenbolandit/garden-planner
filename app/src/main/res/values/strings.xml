@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">GardenPlanner</string>
+    <string name="done_text">Action done!</string>
+
+    <string name="complete_action_button">Complete Action!</string>
+    <string name="next_action_button">Next Action</string>
 
     <string name="icon_action_type_description">Action type icon</string>
+    <string name="icon_succes_description">Success icon</string>
 </resources>
